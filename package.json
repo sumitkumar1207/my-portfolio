@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "description": "A responsive fortfolio with the hepl of the SASS",
   "main": "index.js",
-  "homepage": "https://sumitkumar1207.github.io/my-portfolio",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
-    "deploy": "gh-pages -d dist"
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
   },
   "repository": {
     "type": "git",
@@ -15,7 +13,6 @@
   "author": "Sumit Kumar",
   "license": "MIT",
   "dependencies": {
-    "gh-pages": "^1.2.0",
     "node-sass": "^4.9.3"
   }
 }
