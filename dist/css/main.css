@@ -169,6 +169,7 @@ main {
     width: 300px;
     margin: auto;
     border-radius: 50%;
+    background: url(../img/sumit.jpg);
     background-size: cover;
     border: #eece1a 3px solid; }
   .about-info .bio {
@@ -224,6 +225,7 @@ main {
     visibility: visible;
     opacity: 1;
     border-color: #eece1a;
+    cursor: pointer;
     transition: all 0.5s ease-out; }
 
 .boxes {
