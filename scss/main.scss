@@ -111,7 +111,7 @@ main{
 .job {
     background: lighten($primary-color, 5);
     padding: 0.5rem;
-    border-bottom: $secondary-color 5px solid;
+    border-bottom: $secondary-color !important 5px solid;
 
     .role-in-company{
         font-weight: 500;
@@ -157,7 +157,7 @@ main{
         color: $secondary-color;
         visibility: hidden;
         opacity: 0;
-        border-color: $secondary-color;
+        border-color: $secondary-color !important;
         border: 3px #fff solid;
 
         @include easeOut;
@@ -206,7 +206,7 @@ main{
     border: 0;
     margin-bottom: 0.3rem;
     &:hover{
-        background:$secondary-color;
+        background:$secondary-color !important;
         color: set-text-color($secondary-color);
     }
 }
