@@ -93,7 +93,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" value="save" onclick=c lass="btn btn-default">Submit</button>
+                            <button type="submit" value="save" class="btn btn-default">Submit</button>
                         </div>
                     </div>
                     <div id="form-messages">
@@ -127,7 +127,90 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 <script>
+    $( document ).ready( function () {
 
+        $( '#ajax-contact' ).submit( function ( e ) {
+            e.preventDefault();
+
+            function validateEmail( email ) {
+                var re =
+                    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test( email );
+            }
+            function timeout( e ) {
+                setTimeout( function () {
+                    $( '#' + e ).removeClass( 'showError' );
+                    $( '#' + e ).addClass( 'hideError' );
+                }, 3000 );
+            }
+
+            function validate() {
+                var email = $( "#email" ).val();
+                var regex = /^[a-zA-Z ]{2,30}$/;
+                console.log( '>>>>>>>>>>>>>', regex.test( $( '#name' ).val() ) );
+                if ( $( "#name" ).val() == null || $( "#name" ).val() == "" ) {
+                    $( '#fname' ).removeClass( 'hideError' );
+                    $( '#fname' ).addClass( 'showError' );
+                    let nameOfClass = "fname";
+                    timeout( nameOfClass )
+                    return false
+                } else if ( ( email == null ) || ( email == "" ) ) {
+                    $( '#fmail-empty' ).removeClass( 'hideError' );
+                    $( '#fmail-empty' ).addClass( 'showError' );
+                    let nameOfClass = "fmail-empty";
+                    timeout( nameOfClass )
+                    return false
+                } else if ( $( "#message" ).val() == null || $( "#message" ).val() == "" ) {
+                    $( '#fmsg' ).removeClass( 'hideError' );
+                    $( '#fmsg' ).addClass( 'showError' );
+                    let nameOfClass = "fmsg";
+                    timeout( nameOfClass )
+                    return false
+                }
+
+                if ( validateEmail( email ) ) {
+                    var data = email;
+                    console.log( '----------', email, validateEmail( email ) );
+                    var subscriberEmailId = data;
+                    $.ajax( {
+                        type: "POST",
+                        url: '/sendemail',
+                        data: $( "#ajax-contact" ).serialize(),
+                        success:
+                            // function (data) {
+                            //   console.log('In swal')
+                            swal( {
+                                title: "Thank you for contacting Fleck Entertainment.",
+                                text: "",
+                                type: "success",
+                                animation: false,
+                                confirmButtonText: "OK"
+                            } ).then( function () {
+                                $( "#ajax-contact" )[0].reset();
+                            } )
+                        // },
+                    } );
+
+                } else {
+                    swal( {
+                        title: "Please enter correct email!",
+                        text: "",
+                        type: "success",
+                        animation: false,
+                        confirmButtonText: "OK"
+                    } ).then( function () {
+                        $( "#ajax-contact" )[0].reset();
+                    } );
+                    $( '#fmail' ).removeClass( 'hideError' );
+                    $( '#fmail' ).addClass( 'showError' );
+                    let nameOfClass = "fmail";
+                    timeout( nameOfClass )
+                    return false
+                }
+            }
+            validate();
+        } );
+    } )
 </script>
 
 </html>
