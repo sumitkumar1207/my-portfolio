@@ -141,7 +141,7 @@ header {
   width: 100%; }
 
 .text-secondary {
-  color: #eece1a; }
+  color: #eece1a !important; }
 
 main {
   padding: 4rem;
@@ -210,7 +210,7 @@ main {
     max-height: 200px;
     width: 100%;
     position: absolute;
-    top: -16px;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
