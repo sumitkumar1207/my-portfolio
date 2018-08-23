@@ -24,16 +24,6 @@
                 scrollTop: 0
             }, 2000);
         });
-        // //smoth achor effect
-        // $(document).on('click', '#main-menu li a', function (e) {
-        //     e.preventDefault();
-        //     var anchor = $(this).attr('href');
-        //     // var top = $(anchor).offset().top;
-        //     $('html, body').animate({
-        //         scrollTop: $(anchor).offset().top - 70
-        //     }, 1000);
-        //     $(this).parent().addClass('active').siblings().removeClass('active');
-        // });
         //screenshort carousel
         var $screenshort = $('.screenshort-carousel');
         $screenshort.owlCarousel({
@@ -203,152 +193,6 @@
         preLoder.fadeOut(500);
     });
 
-    // jquery for the scrolling the item start  
-
-    // $(".capability").click(function (event) {
-    //     event.preventDefault();
-    //     $('html,body').animate({
-    //         scrollTop: $(this.hash).offset().top - 100
-    //     }, 1000);
-    //     // console.log('Clicked on', $(this.hash));
-    // });
-    var count = 1;
-
-    $(".capability").on('click', function(event) {
-        if(count == 1){
-            count++
-            var position = $('#capability').offset();
-            window.scroll({
-                top: position.top -150,
-                left: 0,
-                behavior: 'smooth'
-            });
-
-        }else{
-            var position = $('#capability').offset();
-            window.scroll({
-                top: position.top,
-                left: 0,
-                behavior: 'smooth'
-            });
-
-        }
-
-        console.log(">>>>>>>>>>>>",$('#capability').offset().top)
-    })
-
-    $(".about").click(function (event) {
-        event.preventDefault();
-        $('html,body').animate({
-            scrollTop: $(this.hash).offset().top - 100
-        }, 1000);
-        // console.log('Clicked on', $(this.hash));
-    });
-
-    $(".mywork").click(function (event) {
-        event.preventDefault();
-        $('html,body').animate({
-            scrollTop: $(this.hash).offset().top - 1
-        }, 1000);
-        // console.log('Clicked on', $(this.hash));
-    });
-
-    $(".contactme").click(function (event) {
-        event.preventDefault();
-        $('html,body').animate({
-            scrollTop: $(this.hash).offset().top - 1
-        }, 1000);
-        // console.log('Clicked on', $(this.hash));
-    });
-
-    // // scroll on button click
-    // $(".mywork1").click(function(event) {
-    //     event.preventDefault();
-    //     $('html,body').animate({
-    //         scrollTop: $(this.hash).offset().top - 1
-    //     }, 1000);
-    //     // console.log('Clicked on', $(this.hash));
-    // });
-    // $("#contactme1").click(function(event) {
-    //     event.preventDefault();
-    //     $('html,body').animate({
-    //         scrollTop: $(this.hash).offset().top - 1
-    //     }, 1000);
-    //     // console.log('Clicked on', $(this.hash));
-    // });
-
-    $(document).on('click', '.nav-btn', function (e) {
-        e.preventDefault();
-        var anchor = $(this).attr('href');
-        // var top = $(anchor).offset().top;
-        $('html, body').animate({
-            scrollTop: $(anchor).offset().top - 70
-        }, 1000);
-        // $(this).parent().addClass('active').siblings().removeClass('active');
-    });
-
-    $(document).on('click', '.scroll', function (e) {
-        e.preventDefault();
-        var anchor = $(this).attr('href');
-        // var top = $(anchor).offset().top;
-        $('html, body').animate({
-            scrollTop: $(anchor).offset().top - 70
-        }, 1500);
-        // $(this).parent().addClass('active').siblings().removeClass('active');
-    });
-
-
-    //  jquery for the scrolling the item End  
-
-    //pop up video start
-    $("#myModal").on('hidden.bs.modal', function (e) {
-        $("#myModal iframe").attr("src", $("#myModal iframe").attr("src"));
-    });
-
-    $("#myModala").on('hidden.bs.modal', function (e) {
-        $("#myModala iframe").attr("src", $("#myModala iframe").attr("src"));
-    });
-
-    $("#myModalb").on('hidden.bs.modal', function (e) {
-        $("#myModalb iframe").attr("src", $("#myModalb iframe").attr("src"));
-    });
-
-    $("#myModalc").on('hidden.bs.modal', function (e) {
-        $("#myModalc iframe").attr("src", $("#myModalc iframe").attr("src"));
-    });
-
-    $("#myModald").on('hidden.bs.modal', function (e) {
-        $("#myModald iframe").attr("src", $("#myModald iframe").attr("src"));
-    });
-
-    $("#myModale").on('hidden.bs.modal', function (e) {
-        $("#myModale iframe").attr("src", $("#myModale iframe").attr("src"));
-    });
-
-    $("#myModalf").on('hidden.bs.modal', function (e) {
-        $("#myModalf iframe").attr("src", $("#myModalf iframe").attr("src"));
-    });
-
-    $("#myModalg").on('hidden.bs.modal', function (e) {
-        $("#myModalg iframe").attr("src", $("#myModalg iframe").attr("src"));
-    });
-
-    $("#myModalh").on('hidden.bs.modal', function (e) {
-        $("#myModalh iframe").attr("src", $("#myModalh iframe").attr("src"));
-    });
-
-    $("#myModali").on('hidden.bs.modal', function (e) {
-        $("#myModalg iframe").attr("src", $("#myModalg iframe").attr("src"));
-    });
-
-    $("#myModalj").on('hidden.bs.modal', function (e) {
-        $("#myModalh iframe").attr("src", $("#myModalh iframe").attr("src"));
-    });
-
-    $("#myModalk").on('hidden.bs.modal', function (e) {
-        $("#myModalh iframe").attr("src", $("#myModalh iframe").attr("src"));
-    });
-    //popup video end
     //change header
     $(document).ready(function () {
         var header = $('header');
@@ -415,7 +259,6 @@
         url: $(form).attr('action'),
         data: formData
     }).done(function(response) {
-        console.log('Enter mail')
         
         // Make sure that the formMessages div has the 'success' class.
         $(formMessages).removeClass('error');
@@ -436,8 +279,5 @@
     // Submit the form using AJAX.
     
     });
-    //image resize
-    $('.clients img').css('height','70px');
-    //service box resize
-    $('.myservices').css('height','279px' ,'width','285px');
+
 }(jQuery));	
