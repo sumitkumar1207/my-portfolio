@@ -45,10 +45,9 @@ for ( var i = 0; i < yourString.length; i++ ) {
     yourString[i].innerHTML = `${trimmedString}...`;
 }
 
+// JS For mail
 ( function ( $ ) {
     "use strict";
-
-    //for mail..
     $( function () {
         // Get the form.
         var form = $( '#ajax-contact' );
@@ -56,9 +55,6 @@ for ( var i = 0; i < yourString.length; i++ ) {
         // Get the messages div.
         var formMessages = $( '#form-messages' );
 
-        // TODO: The rest of the code will go here...
-
-        // Set up an event listener for the contact form.
         $( form ).submit( function ( event ) {
 
             // Stop the browser from submitting the form.
@@ -86,10 +82,5 @@ for ( var i = 0; i < yourString.length; i++ ) {
             } )
             // TODO
         } );
-
-        // Submit the form using AJAX.
-
     } );
-
-}( jQuery ) );
-
+} );
