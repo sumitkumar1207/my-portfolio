@@ -1,12 +1,10 @@
 $profile-image: url(../img/sumit.jpg);
 
-
 // Wide Screen 
 @include mediaXl {
     .projects {
         grid-template-columns: repeat(4, 1fr);
     }
-
 }
 
 // Desktops & Laptops
